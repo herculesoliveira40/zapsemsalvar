@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar mensagem WhatsApp smwts  zapsemsalvar</title>
+
+    <link rel="shortcut icon" type="imagex/png" href="https://www.svgrepo.com/show/177139/whatsapp-social-media.svg">
+    <link rel="stylesheet" href="mystyle.css">
+
+</head>
+<body>
+    <form>
+      <div class="input-field"></div>
+        <label for="country">País:</label>
+        <select id="country">
+          <option value="55">Brasil (+55) <img src="https://www.svgrepo.com/show/225364/brazil.svg"> </option>
+          <option value="1">Estados Unidos / Canadá (+1) <img src="https://www.svgrepo.com/show/225584/united-states.svg"> </option>
+          <option value="351">Portugal (+351) <img src="https://www.svgrepo.com/show/248591/portugal.svg"> </option>
+          <option value="44">Reino Unido (+44) <img src="https://www.svgrepo.com/show/225575/united-kingdom.svg"> </option>
+          <!-- Adicione mais opções de países conforme necessário -->
+        </select>
+        <br><br>
+      </div>
+      <div class="input-field"></div>
+        <label for="phone">Celular:</label>
+        <input type="text" id="phone" placeholder="Digite o número de celular">
+        <br><br>
+      </div>
+      <div class="input-field"></div>
+        <label for="message">Mensagem:</label>
+        <textarea id="message" placeholder="Digite a mensagem"></textarea>
+        <br><br>
+      </div>
+      <button class="button" type="button" onclick="sendWhatsAppMessage()">Enviar</button>
+    </form>
+  
+    <script>
+      function sendWhatsAppMessage() {
+        var country = document.getElementById("country").value;
+        var phone = document.getElementById("phone").value.replace(/\D/g, ""); // Remove espaços e caracteres especiais
+        var message = encodeURIComponent(document.getElementById("message").value); // Codifica a mensagem para o formato de URL
+  
+        var url = "https://api.whatsapp.com/send?phone=" + country + phone + "&text=" + message;
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+  <footer class="text-center bg-secondary text-light">
+    <p> </p>
+    <p> 
+      2023 <a href="https://github.com/herculesoliveira40" target="_blank"> &copy; </a> </strong> 
+      <a href="https://br.linkedin.com/in/hercules-oliveira-616276160" target="_blank"> <a href="https://github.com/herculesoliveira40" target="_blank"> <img src="https://www.svgrepo.com/show/448234/linkedin.svg" height="30px" width="40px" ></a>    
+    </p>
+             
+  </footer>
+</html>
